@@ -48,7 +48,6 @@ export class ListUL extends BaseElement {
     } else {
       result = await this.getText(liList);
     }
-
     
     return result;
   }
