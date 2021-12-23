@@ -25,9 +25,14 @@ const assertObjectEquality = (data: {actual: {[k: string]: any}, expected: {[k: 
 const assertActualValueBiggerThenExpected = (data: {actual: number, expected: number}) => {
   expect(data.actual).is.above(data.expected,
     `Actual value should be bigger then "${data.expected}", but it's not. "${data.actual}"`)
-}
+};
+
+const assertActualValueNotLessThenExpected = (data: {actual: number, expected: number}) => {
+  expect(data.actual).not.lessThan(data.expected,
+    `Actual value should be bigger then "${data.expected}", but it's not. "${data.actual}"`)
+};
 
 export const assertions = {
   assertCode, assertRequiredKeys, assertDeepArrayEquality, assertValue,
-  assertObjectEquality, assertActualValueBiggerThenExpected
+  assertObjectEquality, assertActualValueBiggerThenExpected, assertActualValueNotLessThenExpected,
 };

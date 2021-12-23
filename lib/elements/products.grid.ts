@@ -1,24 +1,24 @@
 import { BaseElement, filterAsync, IElementHandle, IPage, mapAsync, step } from '..';
 
-export interface ITable {
-  sendKeys(data: ITableSendKeys): Promise<void>;
-  clickOn(data: ITableClick): Promise<void>;
-  getData(): Promise<ITableResult>;
+export interface IProductsGrid {
+  sendKeys(data: IProductsGridSendKeys): Promise<void>;
+  clickOn(data: IProductsGridClick): Promise<void>;
+  getData(): Promise<IProductsGridResult>;
 }
 
-interface ITableSendKeys {
+interface IProductsGridSendKeys {
   //
 }
 
-export interface ITableClick {
+export interface IProductsGridClick {
   tile__title?: string
 }
 
-interface ITableResult {
+interface IProductsGridResult {
   //
 }
 
-export class Table extends BaseElement {
+export class ProductsGrid extends BaseElement {
   constructor(selector: string, name?: string) {
     super(selector, name)
   }
@@ -32,7 +32,7 @@ export class Table extends BaseElement {
   }
 
   @step((name: string) => `Click on ${name}`)
-  async clickOn(data: ITableClick) {
+  async clickOn(data: IProductsGridClick) {
     if (!this.currentElement) await this.initElement();
 
     const neededTitle = await this.currentElement!.$(`.goods-${Object.keys(data).join()}:has-text("${data.tile__title}")`);
@@ -48,7 +48,7 @@ export class Table extends BaseElement {
   }
 
   /**
-   * Private methods
+   * @Private_methods
    * 
    */
   private async getCardsContent(titlesMap: any) {
