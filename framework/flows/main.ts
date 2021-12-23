@@ -12,11 +12,11 @@ async function goToTheNextPage() {
 };
 
 async function gettingDataFromCatalogGrid() {
-  return mainPage.getData({ catalog: { catalogTable: null } });
+  return mainPage.getData({ catalog: { catalogProductsGrid: null } });
 }
 
 async function openProductPageByTitleFor(title: string) {
-  await mainPage.clickOn({ catalog: { catalogTable: { tile__title: title } } });
+  await mainPage.clickOn({ catalog: { catalogProductsGrid: { tile__title: title } } });
 }
 
 export const mainFlows = {

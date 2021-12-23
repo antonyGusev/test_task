@@ -46,7 +46,7 @@ export class BaseElement {
   }
 
   @step((name: string) => `Get data from ${name}`)
-  async getData(): Promise<string | HTMLElement> {
+  async getData(data: any): Promise<string | HTMLElement> {
     if (!this.currentElement) await this.initElement();
 
     await this.currentElement!.scrollIntoViewIfNeeded();

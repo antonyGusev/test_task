@@ -10,11 +10,29 @@ describe('Check product page', () => {
 
   it('Test task', async () => {
     await I.searchFor('Pokemon');
+
+    // Made to slowdown motion. It is bad idea to use sleep in tests
+    await browser.sleep();
+
     await I.goToTheNextPage();
+
+    // Made to slowdown motion. It is bad idea to use sleep in tests
+    await browser.sleep();
+
     await I.openProductPageByTitleFor('Кружка GeekLand Покемон Го Pokemon Go PG.01.03');
 
-    const {productLayout: {productInfoRight}} = await I.getCurrentPrice();
+    // Made to slowdown motion. It is bad idea to use sleep in tests
+    await browser.sleep();
+
+    const currentPrice = await I.getCurrentPrice();
     
-    I.assertActualValueBiggerThenExpected({actual: +productInfoRight.newPrice!.slice(0, -1), expected: 50});
+    I.assertActualValueBiggerThenExpected({actual: +currentPrice!.slice(0, -1), expected: 50});
+
+    // Made to slowdown motion. It is bad idea to use sleep in tests
+    await browser.sleep();
+
+    const thumbnails = await I.getDataFromThumbnailsGalary();
+
+    I.assertActualValueNotLessThenExpected({actual: thumbnails!.length, expected: 3})
   });
 });
