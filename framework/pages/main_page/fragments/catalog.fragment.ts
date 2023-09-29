@@ -26,6 +26,6 @@ export class CatalogFragment extends BaseFragment {
     super(selector, name)
     this.nextPageButton = this.initChild(Button, 'a.button.pagination__direction--forward', 'Next page button');
     this.catalogProductsGrid = this.initChild(ProductsGrid, 'section.content_type_catalog', 'Products catalog grid');
-}
+  }
 
 };
