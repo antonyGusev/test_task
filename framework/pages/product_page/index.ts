@@ -9,9 +9,11 @@ export interface IProductPage {
 }
 
 interface IProductPageSendKeys {
+  //
 }
 
 interface IProductPageClick {
+  //
 }
 
 interface IProductPageGetData {
