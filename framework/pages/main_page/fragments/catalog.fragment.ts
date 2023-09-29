@@ -1,6 +1,7 @@
 import { BaseFragment, Button, IProductsGrid, IProductsGridClick, ProductsGrid } from '../../../../lib';
 
 export interface ICatalogFragmentSendKeys {
+  //
 }
 
 export interface ICatalogFragmentClick {
